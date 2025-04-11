@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viaje a la Sierra Gorda - Fichas</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background: #111;
+        color: white;
+      }
+      header {
+        height: 100vh;
+        background-image: url("portada.jpeg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      header h1 {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 3em;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 20px;
+      }
+      .card {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 10px;
+        transition: transform 0.3s;
+      }
+      .card:hover {
+        transform: scale(1.05);
+      }
+      .card img {
+        width: 100%;
+        display: block;
+        border-radius: 10px;
+      }
+      .fullscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 2000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .fullscreen img {
+        max-width: 100%;
+        max-height: 80vh;
+        border-radius: 10px;
+      }
+      .fullscreen .overlay {
+        margin-top: 20px;
+        background: rgba(0, 0, 0, 0.85);
+        color: #fff;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 90%;
+        box-sizing: border-box;
+      }
+      .overlay h2 {
+        margin-top: 0;
+        font-size: 1.5em;
+      }
+      .overlay p {
+        margin: 10px 0;
+        font-size: 1em;
+      }
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .modal img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Viaje a la Sierra Gorda</h1>
+    </header>
+
+    <section class="grid">
+      <div class="card" onclick="expandFicha('miguel.png')">
+        <img src="miguel.png" alt="Ficha 1" />
+      </div>
+
+      <div class="card" onclick="showModal('ficha2.jpg')">
+        <img src="ficha2.jpg" alt="Ficha 2" />
+      </div>
+      <div class="card" onclick="showModal('ficha3.jpg')">
+        <img src="ficha3.jpg" alt="Ficha 3" />
+      </div>
+      <!-- Puedes seguir agregando más fichas aquí -->
+    </section>
+
+    <div class="modal" onclick="this.style.display='none'">
+      <img id="modalImg" src="" alt="Imagen grande" />
+    </div>
+
+    <div
+      id="fullscreenFicha"
+      class="fullscreen"
+      style="display: none"
+      onclick="closeFicha()"
+    >
+      <img id="fullscreenImg" src="" alt="Imagen expandida" />
+      <div class="overlay">
+        <h2>Miguel Castro</h2>
+        <p><strong>Moto:</strong> BMW GS850</p>
+        <p><strong>Frase:</strong> "Una vuelta más y me convierto en Uber."</p>
+        <p>
+          <strong>Anécdota:</strong> Fue y vino como tres veces por las cosas
+          olvidadas de Miguel cuando se le descompuso la moto. ¡El verdadero
+          Uber de la rodada!
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function showModal(src) {
+        document.getElementById("modalImg").src = src;
+        document.querySelector(".modal").style.display = "flex";
+      }
+
+      function expandFicha(src) {
+        document.getElementById("fullscreenImg").src = src;
+        document.getElementById("fullscreenFicha").style.display = "flex";
+      }
+
+      function closeFicha() {
+        document.getElementById("fullscreenFicha").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
