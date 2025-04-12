@@ -3,162 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viaje a la Sierra Gorda - Fichas</title>
+    <title>Viaje a la Sierra Gorda - Cómic</title>
     <style>
       body {
         margin: 0;
-        font-family: sans-serif;
+        font-family: "Comic Sans MS", cursive, sans-serif;
         background: #111;
         color: white;
       }
+
       header {
         height: 100vh;
-        background-image: url("portada.jpeg");
+        background-image: url("./images/portadaSierra.jpeg");
         background-size: cover;
         background-position: center;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
       }
-      header h1 {
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 20px;
+
+      header h1,
+      header h2 {
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 10px 20px;
         border-radius: 10px;
+        margin: 10px 0;
+      }
+
+      header h1 {
         font-size: 3em;
       }
+
+      header h2 {
+        font-size: 1.5em;
+        font-weight: normal;
+        color: #ffcc00;
+      }
+
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 15px;
         padding: 20px;
       }
+
       .card {
         position: relative;
-        cursor: pointer;
         overflow: hidden;
         border-radius: 10px;
-        transition: transform 0.3s;
+        background-color: #222;
       }
-      .card:hover {
-        transform: scale(1.05);
-      }
+
       .card img {
         width: 100%;
         display: block;
         border-radius: 10px;
       }
-      .fullscreen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.9);
-        z-index: 2000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      .fullscreen img {
-        max-width: 100%;
-        max-height: 80vh;
-        border-radius: 10px;
-      }
-      .fullscreen .overlay {
-        margin-top: 20px;
-        background: rgba(0, 0, 0, 0.85);
+
+      .info {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
         color: #fff;
-        font-family: "Comic Sans MS", cursive, sans-serif;
-        padding: 20px;
-        border-radius: 10px;
-        max-width: 90%;
+        padding: 10px;
         box-sizing: border-box;
       }
-      .overlay h2 {
-        margin-top: 0;
-        font-size: 1.5em;
+
+      .info h2 {
+        margin: 0 0 5px;
+        font-size: 1.2em;
+        color: #ffcc00;
       }
-      .overlay p {
-        margin: 10px 0;
-        font-size: 1em;
-      }
-      .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-      }
-      .modal img {
-        max-width: 90vw;
-        max-height: 90vh;
-        border-radius: 10px;
+
+      .info p {
+        margin: 5px 0;
+        font-size: 0.9em;
       }
     </style>
   </head>
   <body>
     <header>
       <h1>Viaje a la Sierra Gorda</h1>
+      <h2>Grupo Amigos de la Carretera</h2>
     </header>
 
     <section class="grid">
-      <div class="card" onclick="expandFicha('miguel.png')">
-        <img src="miguel.png" alt="Ficha 1" />
+      <div class="card">
+        <img src="./images/miguel.png" alt="Ficha de Miguel Castro" />
+        <div class="info">
+          <h2>Miguel Castro</h2>
+          <p><strong>Moto:</strong> BMW GS1250</p>
+          <p>
+            <strong>Frase:</strong> "Siempre lléga como si tuviera un helicoptero."
+          </p>
+          <p>
+            <strong>Anécdota:</strong> Su moto fue la unica que se rindio y tuvo que regresar en camioneta
+            pero él seguia sonriendo!!
+          </p>
+        </div>
+      </div>
       </div>
 
-      <div class="card" onclick="showModal('ficha2.jpg')">
-        <img src="ficha2.jpg" alt="Ficha 2" />
+      <div class="card">
+        <img src="./images/chuycomic.jpeg" alt="Ficha de Chuy" />
+        <div class="info">
+          <h2>Chuy</h2>
+          <p><strong>Moto:</strong> Husqvarna 900</p>
+          <p><strong>Frase:</strong> "¿Rodamos o qué?"</p>
+          <p>
+            <strong>Anécdota:</strong> El organizador maestro de la rodada,
+            todos lo siguen sin preguntar y aún así logra mantener la calma con
+            una sonrisa. Sin él, no arranca nadie.
+          </p>
+        </div>
       </div>
-      <div class="card" onclick="showModal('ficha3.jpg')">
-        <img src="ficha3.jpg" alt="Ficha 3" />
+      <div class="card">
+        <img src="./images/germancomic.png" alt="Ficha de Germán 'El Chicote'" />
+        <div class="info">
+          <h2>Germán "El Chicote"</h2>
+          <p><strong>Moto:</strong> KTM 800</p>
+          <p><strong>Frase:</strong> "Relajiento de nacimiento, cotorreador por vocación."</p>
+          <p>
+            <strong>Anécdota:</strong> Siempre aparece en medio del relajo armando cotorreo donde no lo había.
+            Nadie sabe cuándo llegó, pero cuando se dan cuenta ya todos están riendo. ¡Un clásico en la rodada!
+          </p>
+        </div>
       </div>
-      <!-- Puedes seguir agregando más fichas aquí -->
+
     </section>
-
-    <div class="modal" onclick="this.style.display='none'">
-      <img id="modalImg" src="" alt="Imagen grande" />
-    </div>
-
-    <div
-      id="fullscreenFicha"
-      class="fullscreen"
-      style="display: none"
-      onclick="closeFicha()"
-    >
-      <img id="fullscreenImg" src="" alt="Imagen expandida" />
-      <div class="overlay">
-        <h2>Miguel Castro</h2>
-        <p><strong>Moto:</strong> BMW GS850</p>
-        <p><strong>Frase:</strong> "Una vuelta más y me convierto en Uber."</p>
-        <p>
-          <strong>Anécdota:</strong> Fue y vino como tres veces por las cosas
-          olvidadas de Miguel cuando se le descompuso la moto. ¡El verdadero
-          Uber de la rodada!
-        </p>
-      </div>
-    </div>
-
-    <script>
-      function showModal(src) {
-        document.getElementById("modalImg").src = src;
-        document.querySelector(".modal").style.display = "flex";
-      }
-
-      function expandFicha(src) {
-        document.getElementById("fullscreenImg").src = src;
-        document.getElementById("fullscreenFicha").style.display = "flex";
-      }
-
-      function closeFicha() {
-        document.getElementById("fullscreenFicha").style.display = "none";
-      }
-    </script>
   </body>
 </html>
