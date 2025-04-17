@@ -11,13 +11,45 @@
     />
     <title>Viaje a la Sierra Gorda - Cómic</title>
     <style>
+
       body {
         margin: 0;
         font-family: "Comic Nueue", sans-serif;
         background: #111;
         color: white;
       }
+      html {
+        scroll-behavior: smooth;
+      }
 
+      nav {
+        position: sticky;
+        top: 0;
+        background-color: #111;
+        z-index: 1000;
+        padding: 10px 0;
+        border-bottom: 2px solid #ffcc00;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 30px;
+      }
+
+      nav a {
+        color: #ffcc00;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
       header {
         height: 100vh;
         background-image: url("./images/portadaSierra.jpeg");
@@ -91,12 +123,21 @@
     </style>
   </head>
   <body>
-    <header>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#fichas">Fichas técnicas</a></li>
+        <li><a href="#dia1">Primer día</a></li>
+        <li><a href="#dia2">Segundo día</a></li>
+        <li><a href="#dia3">Tercer día</a></li>
+      </ul>
+    </nav>
+    <header id="inicio" style="padding-top: 60px">
       <h1>Viaje a la Sierra Gorda</h1>
       <h2>Grupo Amigos de la Carretera</h2>
     </header>
 
-    <section class="grid">
+    <section id="fichas" class="grid">
       <div class="card">
         <img src="./images/chuycomic.jpeg" alt="Ficha de Chuy" />
         <div class="info">
@@ -200,5 +241,20 @@
         </div>
       </div>
     </section>
+    <section id="dia1" style="padding: 40px; text-align: center;">
+      <h2>Día 1 - En camino</h2>
+      <p>(Contenido pendiente por agregar)</p>
+    </section>
+
+    <section id="dia2" style="padding: 40px; text-align: center;">
+      <h2>Día 2 - Llegando a la Sierra</h2>
+      <p>(Contenido pendiente por agregar)</p>
+    </section>
+
+    <section id="dia3" style="padding: 40px; text-align: center;">
+      <h2>Día 3 - El regreso</h2>
+      <p>(Contenido pendiente por agregar)</p>
+    </section>
+  </body>
   </body>
 </html>
