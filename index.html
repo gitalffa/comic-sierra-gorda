@@ -307,5 +307,13 @@
       const navLinks = document.getElementById("navLinks");
       navLinks.classList.toggle("show");
     }
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.remove("show");
+      });
+    });
   </script>
 </html>
