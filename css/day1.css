@@ -1,0 +1,45 @@
+/* day1.css */
+
+.comic-scene {
+  padding: 40px 20px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.comic-scene__title {
+  font-size: 2em;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+.comic-scene__subtitle {
+  font-size: 1em;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.comic-scene__text {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-align: justify;
+}
+.comic-scene__text-negrita {
+  color: #8c8052;
+}
+
+.comic-scene__panel {
+  background-color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  margin: 30px auto;
+  max-width: 960px;
+}
+
+.comic-scene__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}

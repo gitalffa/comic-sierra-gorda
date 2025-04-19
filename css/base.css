@@ -1,0 +1,24 @@
+/* base.css */
+
+body {
+  margin: 0;
+  font-family: "Comic Neue", sans-serif;
+  background: #111;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

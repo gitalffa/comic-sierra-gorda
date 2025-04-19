@@ -1,0 +1,51 @@
+/* layout.css */
+
+.header {
+  height: 100vh;
+  background-image: url("../images/portadaSierra.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.header__title,
+.header__subtitle {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.header__title {
+  font-size: 3em;
+}
+
+.header__subtitle {
+  font-size: 1.5em;
+  font-weight: normal;
+  color: #ffcc00;
+}
+
+.prologue {
+  padding: 60px 20px;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.prologue__title {
+  color: #ffcc00;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.prologue__text {
+  max-width: 800px;
+  margin: 30px auto;
+  font-size: 1.2em;
+  line-height: 1.6;
+}

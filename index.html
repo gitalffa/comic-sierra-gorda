@@ -9,169 +9,24 @@
       href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/day1.css" />
+
     <title>Viaje a la Sierra Gorda - Cómic</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: "Comic Neue", sans-serif;
-        background: #111;
-        color: white;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-
-      nav {
-        position: sticky;
-        top: 0;
-        background-color: #111;
-        z-index: 1000;
-        padding: 10px 0;
-        border-bottom: 2px solid #ffcc00;
-      }
-
-      .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 960px;
-        margin: auto;
-        padding: 0 15px;
-      }
-
-      .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 30px;
-      }
-
-      .nav-links a {
-        color: #ffcc00;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1em;
-      }
-
-      .nav-links a:hover {
-        text-decoration: underline;
-      }
-
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 5px;
-      }
-
-      .hamburger div {
-        width: 25px;
-        height: 3px;
-        background-color: #ffcc00;
-      }
-
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-          flex-direction: column;
-          background-color: #111;
-          position: absolute;
-          top: 28px;
-          left: 15px;
-          padding: 10px;
-          border: 1px solid #ffcc00;
-        }
-
-        .nav-links.show {
-          display: flex;
-        }
-
-        .hamburger {
-          display: flex;
-          margin-left: 15px;
-        }
-      }
-      header {
-        height: 100vh;
-        background-image: url("./images/portadaSierra.jpeg");
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-
-      header h1,
-      header h2 {
-        background-color: rgba(0, 0, 0, 0.3);
-        padding: 10px 20px;
-        border-radius: 10px;
-        margin: 10px 0;
-      }
-
-      header h1 {
-        font-size: 3em;
-      }
-
-      header h2 {
-        font-size: 1.5em;
-        font-weight: normal;
-        color: #ffcc00;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        padding: 20px;
-      }
-
-      .card {
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-        background-color: #222;
-      }
-
-      .card img {
-        width: 100%;
-        display: block;
-        border-radius: 10px;
-      }
-
-      .info {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        padding: 10px;
-        box-sizing: border-box;
-      }
-
-      .info h2 {
-        margin: 0 0 5px;
-        font-size: 1.2em;
-        color: #ffcc00;
-      }
-
-      .info p {
-        margin: 5px 0;
-        font-size: 0.9em;
-      }
-    </style>
   </head>
   <body>
-    <nav>
-      <div class="nav-container">
-        <div class="hamburger" onclick="toggleMenu()">
-          <div></div>
-          <div></div>
-          <div></div>
+    <nav class="nav">
+      <div class="nav__container">
+        <div class="nav__hamburger" onclick="toggleMenu()">
+          <div class="nav__line"></div>
+          <div class="nav__line"></div>
+          <div class="nav__line"></div>
         </div>
-        <ul class="nav-links" id="navLinks">
+        <ul class="nav__links" id="navLinks">
           <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#prologo">Prólogo</a></li>
           <li><a href="#fichas">Fichas técnicas</a></li>
           <li><a href="#dia1">Primer día</a></li>
           <li><a href="#dia2">Segundo día</a></li>
@@ -179,63 +34,105 @@
         </ul>
       </div>
     </nav>
-    <header id="inicio" style="padding-top: 60px">
-      <h1>Viaje a la Sierra Gorda</h1>
-      <h2>Grupo Amigos de la Carretera</h2>
+
+    <header class="header" id="inicio">
+      <h1 class="header__title">Viaje a la Sierra Gorda</h1>
+      <h2 class="header__subtitle">Grupo Amigos de la Carretera</h2>
     </header>
-    <div class="title">Fichas Tecnicas</div>
+
+    <section class="prologue" id="prologo">
+      <h2 class="prologue__title">Prólogo</h2>
+      <p class="prologue__text">
+        En un rincón de México donde las curvas no solo están en la carretera,
+        un grupo de valientes —y no tan valientes— guerreros de dos ruedas se
+        alistaban para la más épica de las gestas: conquistar la Sierra Gorda de
+        Querétaro. No eran caballeros medievales, pero llevaban armadura (de
+        cordura), montaban bestias de acero y rugían al arrancar... aunque
+        algunos rugían más al bajarse de la moto por el lumbago.
+      </p>
+      <p class="prologue__text">
+        Esta no es una historia cualquiera. Aquí encontrarás velocidad, tacos,
+        fracturas de ego, GPS ignorados, amores fugaces con guías turísticas,
+        drones con espíritu libre y frases memorables dichas bajo el casco.
+        Acompáñanos en esta crónica rodada, donde el camino fue tan divertido
+        como la llegada... y a veces, más largo de lo previsto gracias al
+        Carnicero.
+      </p>
+    </section>
     <section id="fichas" class="grid">
-      <div class="card">
-        <img src="./images/chuycomic.jpeg" alt="Ficha de Chuy" />
-        <div class="info">
-          <h2>Chuy</h2>
-          <p><strong>Moto:</strong> Husqvarna 900</p>
-          <p><strong>Frase:</strong> "¿Rodamos o qué?"</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/chuycomic.jpeg"
+          alt="Ficha de Chuy"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Chuy</h2>
+          <p class="card-list__text"><strong>Moto:</strong> Husqvarna 900</p>
+          <p class="card-list__text">
+            <strong>Frase:</strong> "¿Rodamos o qué?"
+          </p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong> El organizador maestro de la rodada,
             todos lo siguen sin preguntar y aún así logra mantener la calma con
             una sonrisa. Sin él, no arranca nadie.
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/miguel.png" alt="Ficha de Miguel Castro" />
-        <div class="info">
-          <h2>Miguel Castro</h2>
-          <p><strong>Moto:</strong> BMW GS1250</p>
-          <p>
-            <strong>Frase:</strong> "Siempre lléga como si tuviera un
-            helicoptero."
+
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/miguel.png"
+          alt="Ficha de Miguel Castro"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Miguel Castro</h2>
+          <p class="card-list__text"><strong>Moto:</strong> BMW GS1250</p>
+          <p class="card-list__text">
+            <strong>Frase:</strong> "Siempre llega como si tuviera un
+            helicóptero."
           </p>
-          <p>
-            <strong>Anécdota:</strong> Su moto fue la unica que se rindio y tuvo
-            que regresar en camioneta pero él seguia sonriendo!!
+          <p class="card-list__text">
+            <strong>Anécdota:</strong> Su moto fue la única que se rindió y tuvo
+            que regresar en camioneta, pero él seguía sonriendo.
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/fabriciocomic.png" alt="Ficha de fabricio" />
-        <div class="info">
-          <h2>Fabricio</h2>
-          <p><strong>Moto:</strong> GS850 BMW</p>
-          <p><strong>Frase:</strong> "lento pero seguro"</p>
-          <p>
+
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/fabriciocomic.png"
+          alt="Ficha de Fabricio"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Fabricio</h2>
+          <p class="card-list__text"><strong>Moto:</strong> GS850 BMW</p>
+          <p class="card-list__text">
+            <strong>Frase:</strong> "Lento pero seguro"
+          </p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong> Aunque siempre iba al final de la
             caravana, nadie se preocupaba: sabían que tarde o temprano llegaría…
             con fotos, historias y una sonrisa de oreja a oreja.
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/germancomic2.png" alt="Ficha de Germán" />
-        <div class="info">
-          <h2>Germán</h2>
-          <p><strong>Moto:</strong> KTM 800</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/germancomic2.png"
+          alt="Ficha de Germán"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Germán</h2>
+          <p class="card-list__text"><strong>Moto:</strong> KTM 800</p>
+          <p class="card-list__text">
             <strong>Frase:</strong> "Relajiento de nacimiento, cotorreador por
             vocación."
           </p>
-          <p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong> Siempre aparece en medio del relajo
             armando cotorreo donde no lo había. Nadie sabe cuándo llegó, pero
             cuando se dan cuenta ya todos están riendo. ¡Un clásico en la
@@ -243,44 +140,57 @@
           </p>
         </div>
       </div>
-      <div class="card">
+      <div class="card-list__item">
         <img
+          class="card-list__image"
           src="./images/abrahamcomic.png"
           alt="Ficha de abraham 'El Chicote'"
         />
-        <div class="info">
-          <h2>Abraham "El Chicote"</h2>
-          <p><strong>Moto:</strong> GS850 BMW</p>
-          <p><strong>Frase:</strong> "Tranquilo y sereno"</p>
-          <p>
+        <div class="card-list__info">
+          <h2 class="card-list__title">Abraham "El Chicote"</h2>
+          <p class="card-list__text"><strong>Moto:</strong> GS850 BMW</p>
+          <p class="card-list__text">
+            <strong>Frase:</strong> "Tranquilo y sereno"
+          </p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong> Nadie sabe porque le dicen chicote pero
             seguro es por su chispa en el cotorreo!!
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/diegocomic.png" alt="Ficha de diego" />
-        <div class="info">
-          <h2>Diego</h2>
-          <p><strong>Moto:</strong> Dominar 400</p>
-          <p><strong>Frase:</strong> "Fotos !!! Fotos !!!"</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/diegocomic.png"
+          alt="Ficha de diego"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Diego</h2>
+          <p class="card-list__text"><strong>Moto:</strong> Dominar 400</p>
+          <p class="card-list__text">
+            <strong>Frase:</strong> "Fotos !!! Fotos !!!"
+          </p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong> trae la moto con menor cilindrada, pero
             pocos le hacen sombra en las rodadas, chiquita pero picosa ( la moto
             claro )!!
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/memocomic.png" alt="Ficha memo" />
-        <div class="info">
-          <h2>Memo</h2>
-          <p><strong>Moto:</strong>GS850 BMW</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/memocomic.png"
+          alt="Ficha memo"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Memo</h2>
+          <p class="card-list__text"><strong>Moto:</strong>GS850 BMW</p>
+          <p class="card-list__text">
             <strong>Frase:</strong> "¿Esta escalera surrealista... lleva a tu
             corazón?"
           </p>
-          <p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong> En el Jardín Escultórico de Edward James,
             mientras todos admiraban las estructuras imposibles, Memo admiraba a
             la guía turística. Se ofreció a “protegerla del calor” caminando a
@@ -289,13 +199,19 @@
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/chuyjrcomic.png" alt="Ficha chuy jr" />
-        <div class="info">
-          <h2>Chuy Jr</h2>
-          <p><strong>Moto:</strong>KTM 800</p>
-          <p><strong>Frase:</strong> "¡No era curva… era una señora!"</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/chuyjrcomic.png"
+          alt="Ficha chuy jr"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Chuy Jr</h2>
+          <p class="card-list__text"><strong>Moto:</strong>KTM 800</p>
+          <p class="card-list__text">
+            <strong>Frase:</strong> "¡No era curva… era una señora!"
+          </p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong> En plena carretera, mientras rodaba junto
             a Andrés, una señora cruzó de la nada. Ambos frenaron en seco, pero
             el susto los dejó sin habla... y sin claxon. Desde entonces, cada
@@ -304,15 +220,19 @@
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/sergiocomic.png" alt="Ficha sergio" />
-        <div class="info">
-          <h2>Sergio</h2>
-          <p><strong>Moto:</strong>GS850 BMW</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/sergiocomic.png"
+          alt="Ficha sergio"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Sergio</h2>
+          <p class="card-list__text"><strong>Moto:</strong>GS850 BMW</p>
+          <p class="card-list__text">
             <strong>Frase:</strong>“Soy biker, Uber y paquetería… todo terreno.”
           </p>
-          <p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong>Cuando la moto de Miguel se rindió, Sergio
             se convirtió en héroe logístico. Dio tantas vueltas recogiendo
             cascos, chamarras y hasta un termo que al final preguntó si no
@@ -321,32 +241,42 @@
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/betitocomic.png" alt="Ficha betito" />
-        <div class="info">
-          <h2>Betito</h2>
-          <p><strong>Moto:</strong>CFMoto 800</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/betitocomic.png"
+          alt="Ficha betito"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Betito</h2>
+          <p class="card-list__text"><strong>Moto:</strong>CFMoto 800</p>
+          <p class="card-list__text">
             <strong>Frase:</strong>“No hables a menos que pueds mejorar el
             silencio.”
           </p>
-          <p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong>Siempre va tan al frente de la caravana
             que cuando los demas llegan el ya se tomo una selfie, comió y ya
             está listo para arrancar otra vez.
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/andrescomic.png" alt="Ficha andres" />
-        <div class="info">
-          <h2>Andres</h2>
-          <p><strong>Moto:</strong>BMW GS850 Triple Black</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/andrescomic.png"
+          alt="Ficha andres"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Andres</h2>
+          <p class="card-list__text">
+            <strong>Moto:</strong>BMW GS850 Triple Black
+          </p>
+          <p class="card-list__text">
             <strong>Frase:</strong>“Yo solo iba por la toma perfecta… ¡no por la
             señora!”
           </p>
-          <p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong>Como fotógrafo oficial del grupo, Andrés
             no suelta la cámara… ni en carretera. En una curva, iba buscando el
             ángulo ideal cuando una señora cruzó la carretera sin previo aviso.
@@ -355,16 +285,20 @@
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/juventinocomic.png" alt="Ficha juventino" />
-        <div class="info">
-          <h2>Don juventino</h2>
-          <p><strong>Moto:</strong>BMW GS850</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/juventinocomic.png"
+          alt="Ficha juventino"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Don juventino</h2>
+          <p class="card-list__text"><strong>Moto:</strong>BMW GS850</p>
+          <p class="card-list__text">
             <strong>Frase:</strong>“A mis años, aún ruedo mejor que muchos
             chamacos.”
           </p>
-          <p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong>A sus 70 años, no solo rodó toda la ruta
             sin quejarse… ¡también brindó como si tuviera 25! Algunos aseguran
             que hasta cantó rancheras y pidió “una más” cuando todos ya estaban
@@ -372,16 +306,20 @@
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/carnicerocomic.png" alt="Ficha carnicer" />
-        <div class="info">
-          <h2>Carnicero</h2>
-          <p><strong>Moto:</strong>BMW GS850</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/carnicerocomic.png"
+          alt="Ficha carnicer"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Carnicero</h2>
+          <p class="card-list__text"><strong>Moto:</strong>BMW GS850</p>
+          <p class="card-list__text">
             <strong>Frase:</strong>“Yo no me pierdo… exploro rutas
             alternativas.”
           </p>
-          <p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong>En la rodada a la Sierra Gorda, el
             Carnicero fue visto más veces entrando y saliendo de caminos
             desconocidos que rodando en la ruta principal. Cada que alguien
@@ -391,15 +329,19 @@
         </div>
       </div>
 
-      <div class="card">
-        <img src="./images/carnicerojrcomic.jpeg" alt="Ficha carnicer" />
-        <div class="info">
-          <h2>Carnicero Jr</h2>
-          <p><strong>Moto:</strong>Honda CB650R</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/carnicerojrcomic.jpeg"
+          alt="Ficha carnicer"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Carnicero Jr</h2>
+          <p class="card-list__text"><strong>Moto:</strong>Honda CB650R</p>
+          <p class="card-list__text">
             <strong>Frase:</strong>“Yo solo vine a rodar… ¡y a ver qué se arma!”
           </p>
-          <p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong>En su primera rodada oficial con el grupo,
             Carnicero Jr. demostró que el talento corre por las venas… pero
             también la indecisión. En cada bifurcación volteaba a ver a su papá,
@@ -409,13 +351,19 @@
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/Carloscomic.png" alt="Ficha carlos" />
-        <div class="info">
-          <h2>Carlos Sanchez</h2>
-          <p><strong>Moto:</strong>GS 850 Adventure</p>
-          <p><strong>Frase:</strong>¿Y ahora qué fregados pasó?”</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/Carloscomic.png"
+          alt="Ficha carlos"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Carlos Sanchez</h2>
+          <p class="card-list__text"><strong>Moto:</strong>GS 850 Adventure</p>
+          <p class="card-list__text">
+            <strong>Frase:</strong>¿Y ahora qué fregados pasó?”
+          </p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong>Carlos no necesita GPS, porque va marcando
             la ruta con sus quejas. Si hace calor, reniega. Si hace frío,
             también. Si hay curvas, más. Pero eso sí, no falta a ninguna rodada.
@@ -424,16 +372,20 @@
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/juancarloscomic.png" alt="Ficha juan carlos" />
-        <div class="info">
-          <h2>Juan Carlos</h2>
-          <p><strong>Moto:</strong>GS 850</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/juancarloscomic.png"
+          alt="Ficha juan carlos"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Juan Carlos</h2>
+          <p class="card-list__text"><strong>Moto:</strong>GS 850</p>
+          <p class="card-list__text">
             <strong>Frase:</strong> “Con el dron capturo todo... menos mi
             dignidad si me caigo.”
           </p>
-          <p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong>Llegó a la rodada con su dron como si
             fuera parte de una producción de Netflix. Lo voló en cada parada, en
             cada curva, en cada desayuno. Pero el momento estelar fue cuando
@@ -442,16 +394,20 @@
           </p>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/paulgomezcomic.png" alt="Ficha paul gomez" />
-        <div class="info">
-          <h2>Paul Gomez</h2>
-          <p><strong>Moto:</strong>GS 850</p>
-          <p>
+      <div class="card-list__item">
+        <img
+          class="card-list__image"
+          src="./images/paulgomezcomic.png"
+          alt="Ficha paul gomez"
+        />
+        <div class="card-list__info">
+          <h2 class="card-list__title">Paul Gomez</h2>
+          <p class="card-list__text"><strong>Moto:</strong>GS 850</p>
+          <p class="card-list__text">
             <strong>Frase:</strong> “Mi papá rueda más que tú y Edward James
             juntos.”
           </p>
-          <p>
+          <p class="card-list__text">
             <strong>Anécdota:</strong>Hijo orgulloso de Don Juventino, Paul no
             solo rueda, ¡defiende la historia! Durante la visita al jardín
             escultórico, terminó en un acalorado (pero respetuoso) debate con la
@@ -464,33 +420,177 @@
       </div>
     </section>
 
-    <section id="dia1" style="padding: 40px; text-align: center">
-      <h2>Día 1 - En camino</h2>
-      <p>(Contenido pendiente por agregar)</p>
+    <section id="dia1" class="comic-scene grid">
+      <h2 class="comic-scene__title">Día 1 - "El llamado de la carretera"</h2>
+      <h3 class="comic-scene__subtitle">
+        "Todo gran viaje comienza con un tanque lleno... o con una confusión
+        geográfica."
+      </h3>
+
+      <div class="comic-scene__panel card-list__item">
+        <img
+          src="./images/salida-aerea-vineta.png"
+          alt="Vista aérea de los integrantes saliendo con el amanecer"
+          class="comic-scene__image"
+        />
+        <p class="comic-scene__text">
+          Aún no amanecía cuando comenzaron a encenderse los grupos de WhatsApp,
+          los intercomunicadores, las alarmas y los primeros rugidos metálicos
+          de las motos. Uno a uno, los integrantes del grupo salieron de sus
+          casas, cargados de ilusión, café instantáneo y una buena dosis de
+          sueño mal dormido. El punto de reunión era claro para todos:
+          Gasolinera de Bonaterra, 6:30 AM. Bueno… casi para todos.
+        </p>
+      </div>
+      <div class="comic-scene__panel card-list__item">
+        <img
+          src="./images/fabricio-carlos-vineta.png"
+          alt="Viñeta de Fabricio y Carlos en la gasolinera"
+          class="comic-scene__image"
+        />
+        <p class="comic-scene__text">
+          <span class="comic-scene__subtitle"
+            >🚦 Carlos Sánchez, el GPS emocional</span
+          >
+          <br />
+          Carlos, fiel a su tradición de ir un paso adelante (aunque sea en
+          dirección equivocada), llegó puntual… pero a la gasolinera de Las
+          Américas, completamente solo, renegando por el frío, el tráfico y el
+          “pinche Google Maps que no sirve”. No contestaba mensajes, pero sí
+          enviaba audios largos diciendo que “él ya estaba donde quedamos”.
+        </p>
+        <p class="comic-scene__text">
+          <span class="comic-scene__subtitle"
+            >🏍️ Fabricio y la caída épica
+          </span>
+          <br />
+          Mientras tanto,Fabricio, siempre precavido, pasó también por Las
+          Américas a llenar tanque antes de ir al punto de reunión. Y en un
+          descuido —tal vez por el piso mojado, o por el sueño, o por la
+          emoción— la moto se le resbaló en plena bomba. Nada grave: más herido
+          el orgullo que el carenado. Pero como buen motero, la levantó como si
+          nada y siguió su camino… sin olvidar tomarse la selfie de rigor con
+          cara de “aquí no pasó nada”.
+        </p>
+      </div>
+      <div class="comic-scene__panel">
+        <img
+          src="./images/abrazosgas.png"
+          alt="abrazos integrantes saliendo con el amanecer"
+          class="comic-scene__image"
+        />
+        <p class="comic-scene__text">
+          <span class="comic-scene__subtitle"
+            >“No importaba la hora, el frío o el sueño: lo que vibraba más
+            fuerte que las motos, eran los corazones.”</span
+          >
+          <br />
+          Uno a uno, las motos comenzaron a llegar a
+          <strong class="comic-scene__text-negrita"
+            >la gasolinera de Bonaterra.</strong
+          >
+          Cada faro encendido que aparecía en la niebla matutina era como una
+          chispa de alegría que se sumaba al grupo. Las carcajadas se
+          encendieron como motores. Los abrazos sonaban más fuerte que los
+          escapes.<br />
+          Ahí estaban todos. Algunos con las mochilas aún mal cerradas, otros
+          buscando los lentes de sol que no encontraban. Pero todos con la misma
+          energía: la de quienes saben que están por vivir algo grande.
+        </p>
+        <ul>
+          <li>
+            <strong class="comic-scene__text-negrita">Don Juventino</strong> fue
+            recibido como toda una leyenda viviente.
+          </li>
+          <li>
+            <strong class="comic-scene__text-negrita">Chuy</strong> dio el
+            primer “¡¿Rodamos o qué?!” y fue como apretar el botón de inicio de
+            una gran aventura.
+          </li>
+          <li>
+            <strong class="comic-scene__text-negrita">Memo</strong> fiel a su
+            estilo, ya estaba buscando a ver si alguien necesitaba bloqueador o
+            guía emocional.
+          </li>
+          <li>
+            <strong class="comic-scene__text-negrita">Betito</strong> llegó tan
+            temprano que casi los ve llegar desde adentro del OXXO.
+          </li>
+          <li>
+            <strong class="comic-scene__text-negrita">Carlos</strong> tras su
+            desvío, fue recibido entre bromas... y uno que otro “te dije, wey”.
+          </li>
+          <li>
+            <strong class="comic-scene__text-negrita"
+              >El Carnicero y su hijo
+            </strong>
+            llegaron juntos, como si el destino quisiera decir “esto es de
+            generaciones”.
+          </li>
+        </ul>
+
+        <p class="comic-scene__text">
+          Y ahí, en medio de cascos, termos de café, selfies improvisadas y
+          rugidos de motor, nació ese sentimiento indescriptible que solo se
+          conoce entre quienes ruedan juntos:
+        </p>
+        <h2 class="comic-scene__title">Hermandad.</h2>
+        <p class="comic-scene__text">
+          Porque más allá de la ruta, lo que estaban a punto de comenzar… era
+          una historia que se contaría por años.
+        </p>
+      </div>
+      <div class="comic-scene__panel">
+        <img
+          src="./images/carloslavamoto.png"
+          alt="Viñeta de carlos sanchez lava su moto"
+          class="comic-scene__image"
+        />
+        <p class="comic-scene__text">
+          <span class="comic-scene__subtitle"
+            >🧼 Carlos y su GS: “Primero limpio, luego épico”</span
+          >
+          <br />
+          Justo cuando los motores rugían en la gasolinera y los abrazos aún no
+          terminaban, apareció Carlos Sánchez, rodando con su GS 850
+          reluciente... al menos de un lado. Sin decir palabra, se dirigió al
+          área de lavado, como si viniera a una sesión de fotos y no a cruzar la
+          Sierra Gorda.<br />—“¡No me voy con la moto sucia, qué van a decir los
+          mezquites!” —exclamó mientras enjabonaba con precisión quirúrgica el
+          rin trasero.<br />Los demás, entre carcajadas y cafés, miraban
+          divertidos cómo Carlos reclamaba al viento porque “la manguera no
+          tenía suficiente presión” y porque “nadie lava como en su barrio”.
+          Cuando terminó, su GS brillaba como nueva… durante cinco gloriosos
+          minutos, justo hasta que Memo pasó salpicando con su llanta
+          trasera:<br />
+          —“Ups, era sin querer, Carlitos…” <br />Carlos no respondió. Solo lo
+          miró, suspiró… y volvió a lavar el rin. Así empezó la aventura: con
+          gasolina, abrazos… ¡y un enjuague premium!
+        </p>
+      </div>
     </section>
 
     <section id="dia2" style="padding: 40px; text-align: center">
-      <h2>Día 2 - Llegando a la Sierra</h2>
-      <p>(Contenido pendiente por agregar)</p>
+      <h2 class="card-list__title">Día 2 - Llegando a la Sierra</h2>
+      <p class="card-list__text">(Contenido pendiente por agregar)</p>
     </section>
 
     <section id="dia3" style="padding: 40px; text-align: center">
-      <h2>Día 3 - El regreso</h2>
-      <p>(Contenido pendiente por agregar)</p>
+      <h2 class="card-list__title">Día 3 - El regreso</h2>
+      <p class="card-list__text">(Contenido pendiente por agregar)</p>
     </section>
-  </body>
-  <script>
-    function toggleMenu() {
-      const navLinks = document.getElementById("navLinks");
-      navLinks.classList.toggle("show");
-    }
-
-    // Cerrar menú al hacer clic en un enlace
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      link.addEventListener("click", () => {
+    <script>
+      function toggleMenu() {
         const navLinks = document.getElementById("navLinks");
-        navLinks.classList.remove("show");
+        navLinks.classList.toggle("nav__links--show");
+      }
+
+      document.querySelectorAll(".nav__links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          const navLinks = document.getElementById("navLinks");
+          navLinks.classList.remove("nav__links--show");
+        });
       });
-    });
-  </script>
+    </script>
+  </body>
 </html>
