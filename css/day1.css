@@ -43,3 +43,6 @@
   height: auto;
   display: block;
 }
+.comic-scene__list {
+  text-align: justify;
+}
